@@ -8,7 +8,7 @@
   },
   "steps": [
     {
-      "step": "setLanguage",
+      "step": "setSiteLanguage",
       "language": "it_IT"
     },
     {
