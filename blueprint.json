@@ -28,23 +28,8 @@
       "options": { "activate": true }
     },
     {
-      "step": "setSiteOptions",
-      "options": {
-        "blogname": "Il mio negozio",
-        "woocommerce_store_address": "Via Roma 1",
-        "woocommerce_store_city": "Agrigento",
-        "woocommerce_default_country": "IT:AG",
-        "woocommerce_store_postcode": "92100",
-        "woocommerce_currency": "EUR",
-        "woocommerce_currency_pos": "right_space",
-        "woocommerce_price_decimal_sep": ",",
-        "woocommerce_price_thousand_sep": ".",
-        "woocommerce_weight_unit": "kg",
-        "woocommerce_dimension_unit": "cm",
-        "woocommerce_onboarding_profile": "{\"completed\":true,\"skipped\":true}",
-        "woocommerce_task_list_hidden": "yes",
-        "woocommerce_allow_tracking": "no"
-      }
+      "step": "runPHP",
+      "code": "<?php require_once '/wordpress/wp-load.php'; delete_transient('_wc_activation_redirect'); update_option('woocommerce_onboarding_profile', ['completed' => true, 'skipped' => true]); update_option('woocommerce_task_list_hidden', 'yes'); update_option('woocommerce_store_address', 'Via Roma 1'); update_option('woocommerce_store_city', 'Agrigento'); update_option('woocommerce_default_country', 'IT:AG'); update_option('woocommerce_store_postcode', '92100'); update_option('woocommerce_currency', 'EUR'); update_option('woocommerce_currency_pos', 'right_space'); update_option('woocommerce_price_decimal_sep', ','); update_option('woocommerce_price_thousand_sep', '.'); update_option('woocommerce_weight_unit', 'kg'); update_option('woocommerce_dimension_unit', 'cm');"
     }
   ]
 }
