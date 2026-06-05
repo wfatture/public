@@ -8,6 +8,10 @@
   },
   "steps": [
     {
+      "step": "setLanguage",
+      "language": "it_IT"
+    },
+    {
       "step": "installPlugin",
       "pluginData": {
         "resource": "wordpress.org/plugins",
@@ -38,10 +42,6 @@
         "woocommerce_weight_unit": "kg",
         "woocommerce_dimension_unit": "cm"
       }
-    },
-    {
-      "step": "runPHP",
-      "code": "<?php require '/wordpress/wp-load.php'; WC_Install::create_pages(); wp_set_locale('it_IT'); ?>"
     }
   ]
 }
