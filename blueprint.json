@@ -40,7 +40,10 @@
         "woocommerce_price_decimal_sep": ",",
         "woocommerce_price_thousand_sep": ".",
         "woocommerce_weight_unit": "kg",
-        "woocommerce_dimension_unit": "cm"
+        "woocommerce_dimension_unit": "cm",
+        "woocommerce_onboarding_profile": "{\"completed\":true,\"skipped\":true}",
+        "woocommerce_task_list_hidden": "yes",
+        "woocommerce_allow_tracking": "no"
       }
     }
   ]
