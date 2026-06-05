@@ -1,0 +1,47 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/",
+  "login": true,
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woocommerce"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woo-fattureincloud"
+      },
+      "options": { "activate": true }
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Il mio negozio",
+        "woocommerce_store_address": "Via Roma 1",
+        "woocommerce_store_city": "Agrigento",
+        "woocommerce_default_country": "IT:AG",
+        "woocommerce_store_postcode": "92100",
+        "woocommerce_currency": "EUR",
+        "woocommerce_currency_pos": "right_space",
+        "woocommerce_price_decimal_sep": ",",
+        "woocommerce_price_thousand_sep": ".",
+        "woocommerce_weight_unit": "kg",
+        "woocommerce_dimension_unit": "cm"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; WC_Install::create_pages(); wp_set_locale('it_IT'); ?>"
+    }
+  ]
+}
